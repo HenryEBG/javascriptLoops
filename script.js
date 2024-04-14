@@ -33,35 +33,49 @@ for (let i = 1; i <= 100; i++) {
  */
 
 // Print a title for the exercise
+console.log("")
 console.log("***************************")
 console.log("*** Prime Time Exercise ***")
 console.log("***************************")
+console.log(``)
+console.log(`This solution is taking the initial number as the first number to try`)
+console.log(`If we want the first prime after the initial number just we need to change`)
+console.log(`i=initialNumber to i=initialNumber+1 in the first for loop`)
+console.log(``)
 
 //declare a initial number
+//we can change both number to search prime numbers
 let initialNumber = 60
 let finishNumber = 100
 
 
 //let prime = false
 let nextPrime = 0
+//to temporal save the last number that we try 
 let index = 0
+//validate that initial number not be smaller then finishNumber
 if (initialNumber > finishNumber) {
   console.log(`Your initial number of ${initialNumber} can be greater than ${finishNumber}`)
 } else {
+  //if the initial number is less then 3 the answers is 2
   if (initialNumber < 3) {
     console.log(`The next prime number is : 2`)
-  }
+  }//if not we use loops to find the next prime number
   else {
+    //loop to begin try from the initialNumber until get the finishNumber
     for (i = initialNumber; i <= finishNumber; i++) {
-      //verificar si i es primo
+      //with every number we have to try if the number is prime
       for (j = 2; j < i; j++) {
+        //we see if the number is divided by any number between 2 and the actual number-1
+        //if is positive it means it is not prime and stop to try the next number
         if (i % j === 0) {
           break
         }
 
         index = j
       }
-
+      //if we try any number between 2 and the actual number and we dont find any can divide
+      //we find the next prime number.  We print the message and finish the search
       if (index + 1 == i) {
         nextPrime = i
         console.log(`The next prime number is : ${nextPrime}`)
@@ -69,6 +83,7 @@ if (initialNumber > finishNumber) {
       }
 
     }
+    //in case we dont find any prime number between the range we make an alert
     if (nextPrime === 0) {
       console.log(`There is no prime numbers between ${initialNumber} and ${finishNumber}`)
       console.log(`Please increment the finish limit of ${finishNumber}`)
@@ -81,6 +96,7 @@ if (initialNumber > finishNumber) {
  */
 
 // Print a title for the exercise
+console.log("")
 console.log("***************************")
 console.log("****** Feeling Loopy ******")
 console.log("***************************")
